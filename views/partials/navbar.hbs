@@ -1,0 +1,103 @@
+
+
+<nav class="navbar border-bottom navbar-expand-lg py-2 navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">{{data.brandName}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> 
+{{!-- 
+      ///admincontroll --}}
+      
+       {{#if user}}
+            {{#each data.links}}
+ 
+                <li class="nav-item">  
+
+                 
+                      {{#if @last}}  
+                    <span class="d-none">{{this.label}}</span>  
+                  {{else}}
+                        {{!-- //its gives left all --}}
+                         <a class="d-none" aria-current="page" href={{this.url}}>{{this.label}}</a> 
+               
+                {{/if}}
+          
+               
+                </li>
+       
+            {{/each}}
+              
+                <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-current="page" href="#">Edit-Navbar</a>
+                 {{!-- <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal1" aria-current="page" href="#">Edit-Slider</a> --}}
+                  
+                  
+                  <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+            
+       {{else}}
+       
+            {{#each data.links}}
+
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href={{this.url}}>{{this.label}}</a>
+                </li>
+       
+            {{/each}}
+       
+       {{/if}}
+                            
+{{!-- <!-- Modal --> --}}
+<div class="modal fade" id="exampleModal" tabindex="-1"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+
+				<h5 class="modal-title" id="exampleModalLabel">Navbar</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="bg-warning bg-gradient">
+					<div class="card-body ">
+           <div class="card bg-info bg-gradient text-white">
+             <div class="card-body">
+    
+                       <li>Company Name</li>
+                   <input class="form-control bg-dark text-white " type="text" value="{{data.brandName}}" aria-label="form-control" >
+                       <br>{{#each data.links}}
+                       <li>Label Name</li>
+                     <input class="form-control bg-dark text-white" type="text" value="{{this.label}}" aria-label="form-control" >
+                     <li>Url Name</li>
+                     <input class="form-control "type="text" value="{{this.url}}" aria-label="form-control" >
+                   
+                      {{!-- <a class="nav-link active" aria-current="page" href={{this.url}}>{{this.label}}</a> --}}
+                    <br>  {{/each}}
+             </div>
+
+           </div>
+			
+					</div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary"
+					data-bs-dismiss="modal">Close</button>
+         {{!-- <a href="" class="btn btn-danger text-center">Edit</a> --}}
+         <button type="reset" class="btn btn-danger">Edit</button>           
+
+			</div>
+		</div>
+	</div>
+</div>
+{{!-- <-----Modal end---------- --}}
+{
+          
+      </ul>
+    
+    </div>
+  </div>
+</nav>

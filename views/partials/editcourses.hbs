@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course-Edit</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+     
+</head>
+<body>
+  
+     
+    <div class="container-fluid py-4">    
+    <div class="card col-md-6 offset-md-3 py-2">
+        <div class="card-body">
+          <form action="/course-update" method="post">
+                        <input type="text" hidden  name="_id" value="{{userdata._id}}">
+                    <label>CourseName</label>
+                      <input class="form-control bg-dark text-white " name="CourseName" type="text" value="{{userdata.CourseName}}" aria-label="form-control" >
+                     <label>FacultyName</label>
+                     <input class="form-control bg-dark text-white" name="FacultyName" type="text" value="{{userdata.FacultyName}}" aria-label="form-control" >
+                   <label>DateName</label>
+                     <input class="form-control bg-dark text-white" name="Date" type="text" value="{{userdata.Date}}" aria-label="form-control" >
+                    <label>time</label>
+                     <input class="form-control bg-dark text-white" name="time" type="text" value="{{userdata.time}}" aria-label="form-control" >
+                    <label>Linktext</label>
+                     <input class="form-control bg-dark text-white" name="linktext" type="text" value="{{userdata.linktext}}" aria-label="form-control" >
+                     <label>Linkurl</label>
+                     <input class="form-control bg-dark text-white" name="linkurl" type="text" value="{{userdata.linkurl}}" aria-label="form-control" >
+                       <br><button class="col-md-3 offset-md-4 btn btn-primary text-center">Update</button>
+                </form>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
